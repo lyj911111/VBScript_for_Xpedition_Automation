@@ -1,5 +1,5 @@
 '
-' xPCB 내의 모든 Component를 하나씩 msgbox로 찍어봄 (for문없이 노가다)
+' Component 하나의 property를 txt에 출력해봄
 '
 
 Dim pcbApp
@@ -24,13 +24,13 @@ If (ValidateServer(pcbDoc) = 1) Then
     dim compObj, propObj, propName
 
     ' C1 의 Attached Properties (Select Mode로 Part를 클릭하면 나오는 속성)
-    propName = "Value"
-    propName = "Part Number"
-    propName = "SSheet"
-    propName = "Type"
-    propName = "Cell Name"
-    propName = "SPath"
-    propName = "$$Internal_UUID"
+    ' propName = "Value"
+    ' propName = "Part Number"
+    ' propName = "SSheet"
+    ' propName = "Type"
+    ' propName = "Cell Name"
+    ' propName = "SPath"
+    ' propName = "$$Internal_UUID"
 
     ' 1개의 component 선택 Item(1)
     set compObj = compsColl.Item(1)
