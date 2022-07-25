@@ -1,5 +1,5 @@
 '
-' xPCB 내의 모든 Component를 하나씩 msgbox로 찍어봄 (for문없이 노가다)
+' xPCB 내의 모든 Component를 하나씩 msgbox로 찍어봄 (for문)
 '
 
 Dim pcbApp
@@ -19,6 +19,7 @@ If (ValidateServer(pcbDoc) = 1) Then
     dim compObj, propObj, propName
     propName = "MyProperty"
 
+    ' for문으로 10개 component 찍어봄
     For i=1 To 10
         set compObj = compsColl.Item(i)
         msgbox compObj
@@ -81,5 +82,4 @@ Private Function ValidateServer(doc)
 End Function
 '---------------------------------------
 ' End Validate Server Function
-
 
