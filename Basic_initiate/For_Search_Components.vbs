@@ -19,11 +19,17 @@ If (ValidateServer(pcbDoc) = 1) Then
     dim compObj, propObj, propName
     propName = "MyProperty"
 
-    ' for문으로 10개 component 찍어봄
+    ' msgbox에 compObj.refdes 가 정석이지만, 그냥 compObj 로 둬도 refdes가 들어감
     For i=1 To 10
+        set compObj = compsColl.Item(i)
+        msgbox compObj.refdes
+    Next
+
+    For i=11 To 20
         set compObj = compsColl.Item(i)
         msgbox compObj
     Next
+
     
     ' set compObj = compsColl.Item(1)
     ' msgbox compObj
