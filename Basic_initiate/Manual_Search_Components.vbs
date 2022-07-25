@@ -15,7 +15,6 @@ If (ValidateServer(pcbDoc) = 1) Then
 
     ' 여기에 코드를 작성
     ' 하나씩 넘어갈때마다 다음 refdes가 찍힘
-    
     Set CompsColl = pcbDoc.Components
     dim compObj, propObj, propName
     propName = "MyProperty"
