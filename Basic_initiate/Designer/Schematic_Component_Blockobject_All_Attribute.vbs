@@ -36,25 +36,26 @@ striCDBDesign = objProjectData.GetiCDBDesigns.GetItem(1)
 striCDBRootBlock = objProjectData.GetiCDBDesignRootBlock(striCDBDesign)
 
 ' board1 출력
-MsgBox striCDBDesign
+MsgBox "Current Board name : " & striCDBDesign
 ' schematic1 출력
-msgbox striCDBRootBlock
+msgbox "Current Schematic Name : " & striCDBRootBlock
 
+' block에 대한 object얻고 이름을 출력
 Dim sDesignName, sDesignAlias
 sDesignName = vdblock.GetName(SHORT_NAME)
+msgbox "Block Name : " & sDesignName
 
 ' For Each Comp in vdview.Query(VDM_COMP, VD_ALL)
 dim colComps
 set colComps = vdview.Query(VDM_COMP, VD_ALL) 
 
 
+
 ' 하나의 component에 대해서 Block object로 추출할 수 있는 것들...
 Dim oComp
 ' Block object관련 변수들
 Dim oBlockRefdes, oBlockPartName, oBlockPartNumber, oBlockCellName, oBlockPartLabel
-' Instance Property 관련 변수
-Dim CompInst
-Dim sPartName
+
 For Each oComp In colComps
 	' 속성(Attribute)를 담는 object
     ' ** Block object이므로 Block Value Refdes가 출력됨 **
@@ -63,11 +64,6 @@ For Each oComp In colComps
     Set oBlockPartNumber = oComp.FindAttribute("Part Number")
     Set oBlockCellName = oComp.FindAttribute("Cell Name")
     Set oBlockPartLabel = oComp.FindAttribute("Part Label")
-
-    Set CompInst = component.Instances
-    For Each name In CompInsts
-       MsgBox "InstanceName = "& name,,"UID"
-    Next
 
     
     ' 속성을 출력해보면서 메세지박스로 yes or no 박스로 확인
