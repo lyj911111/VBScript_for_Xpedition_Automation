@@ -24,16 +24,22 @@ Else
     Msgbox("Could not validate the server. Exiting program.")
 End If
 
-' 내 커맨드 확인 함수
-Sub myCommands_PostOnCommand(sCommandName,CommandID)
+' 마우스 클릭으로 커맨드 확인 할 수 있는 함수 두개 post, pre
+Sub myCommands_PostOnCommand(sCommandName, CommandID)
     Call AppendOutput("test", "PostCmd: " & sCommandName & " " & CommandID)
 End Sub
 
-Sub myCommands_PreOnMouseClk(eButton , eFlags ,dX , dY) 
-    Call AppendOutput("test", "PreCmd: " & cmdListener.name & " " & cmdListener.id)
-
-'MsgBox cmdListener.name & " | " & cmdListener.id
+Sub myCommands_PreOnCommand(sCommandName, commandID)
+    Call AppendOutput("test", "PreCmd: " & sCommandName & " " & CommandID)
 End Sub
+
+
+' 아래는 마우스 이벤트 함수
+'Sub myCommands_PreOnMouseClk(eButton , eFlags ,dX , dY) 
+'    Call AppendOutput("test", "PreCmd: " & cmdListener.name & " " & cmdListener.id)
+'
+'MsgBox cmdListener.name & " | " & cmdListener.id
+'End Sub
 
 
 
